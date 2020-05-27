@@ -105,10 +105,10 @@
                                                  (switch-to-buffer
                                                   (other-buffer))))
 
-    (define-key m (leader-key-mode-kbd "f") nil)
-    (define-key m (leader-key-mode-kbd "f s") 'save-buffer)
-    (define-key m (leader-key-mode-kbd "f o") 'find-file-at-point)
-    (define-key m (leader-key-mode-kbd "f S") 'save-some-buffers)
+    (define-key m (leader-key-mode-kbd "f") 'ace-jump-char-mode)
+    ;;(define-key m (leader-key-mode-kbd "f s") 'save-buffer)
+    ;;(define-key m (leader-key-mode-kbd "f o") 'find-file-at-point)
+    ;;(define-key m (leader-key-mode-kbd "f S") 'save-some-buffers)
     (define-key m (leader-key-mode-kbd "(") 'insert-parentheses)
     (define-key m (leader-key-mode-kbd "\"") #'(lambda (arg) (interactive "P") (insert-pair arg 34 34)))
     (define-key m (leader-key-mode-kbd "[") #'(lambda (arg) (interactive "P") (insert-pair arg 91 93)))
