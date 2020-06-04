@@ -34,7 +34,7 @@
 (defmacro leader-key-mode-kbd (key)
   (kbd key))
 
-(defvar leader-key (leader-key-mode-kbd "\\")
+(defvar leader-key (leader-key-mode-kbd ",")
   "the default leader key")
 ;;;###autoload
 (define-minor-mode leader-key-mode
