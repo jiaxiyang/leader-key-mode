@@ -81,6 +81,8 @@
     ;;(define-key m (leader-key-mode-kbd "s") 'leader-key-mode-select-symbol-at-point)
     (define-key m (leader-key-mode-kbd "y") 'yank)
     (define-key m (leader-key-mode-kbd "s s") 'projectile-find-file)
+    (define-key m (leader-key-mode-kbd "u u") 'undo-tree-undo)
+    (define-key m (leader-key-mode-kbd "r r") 'undo-tree-redo)
     (define-key m (leader-key-mode-kbd "a a") 'copy-to-x-clipboard)
     (define-key m (leader-key-mode-kbd "p p") 'paste-from-x-clipboard)
     (define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
