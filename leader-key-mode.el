@@ -91,7 +91,8 @@
     (define-key m (leader-key-mode-kbd "d d") 'kill-whole-line)
     (define-key m (leader-key-mode-kbd "d l") 'leader-key-mode--duplicate-line)
     (define-key m (leader-key-mode-kbd "w w") 'delete-window)
-    (define-key m (leader-key-mode-kbd "t w") 'toggle-windows-split)
+    (define-key m (leader-key-mode-kbd "w t") 'toggle-windows-split)
+    (define-key m (leader-key-mode-kbd "w t") 'transpose-windows)
     (define-key m (leader-key-mode-kbd "n") 'next-line)
     ;;(define-key m (leader-key-mode-kbd "u") 'undo)
     ;;(define-key m (leader-key-mode-kbd ":") pp-eval-expression)
@@ -271,6 +272,32 @@ This is common convention for many editors.  B is the beginnin of
  (interactive)
  (if (window-minibuffer-p (selected-window))
     (keyboard-escape-quit)))
+
+;; https://emacs.stackexchange.com/questions/318/switch-window-split-orientation-fastest-way
+(defun transpose-windows ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))
 
 (provide 'leader-key-mode)
 ;;; leader-key-mode.el ends here
