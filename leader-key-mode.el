@@ -80,6 +80,8 @@
   (let ((m (make-sparse-keymap)))
     (define-key m (leader-key-mode-kbd "s") 'leader-key-mode-select-symbol-at-point)
     (define-key m (leader-key-mode-kbd "y") 'yank)
+    (define-key m (leader-key-mode-kbd "aa" 'copy-to-x-clipboard)
+    (define-key m (leader-key-mode-kbd "pp" 'paste-from-x-clipboard)
     (define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
     ;;(define-key m (leader-key-mode-kbd "a") 'beginning-of-line)
     (define-key m (leader-key-mode-kbd "b f") 'beginning-of-defun)
@@ -213,6 +215,40 @@ This is common convention for many editors.  B is the beginnin of
       (message "save point to register")
       (point-to-register 'a))))
 
+
+;; jiaxiyang's config
+(setq *is-a-mac* (eq system-type 'darwin))
+(setq *cygwin* (eq system-type 'cygwin) )
+(setq *linux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)) )
+(defun copy-to-x-clipboard ()
+  (interactive)
+  (if (region-active-p)
+      (progn
+        (cond
+         ((and (display-graphic-p) x-select-enable-clipboard)
+          (x-set-selection 'CLIPBOARD (buffer-substring (region-beginning) (region-end))))
+         (t (shell-command-on-region (region-beginning) (region-end)
+                                     (cond
+                                      (*cygwin* "putclip")
+                                      (*is-a-mac* "pbcopy")
+                                      (*linux* "xsel -ib")))
+            ))
+        (message "Yanked region to clipboard!")
+        (deactivate-mark))
+        (message "No region active; can't yank to clipboard!")))
+
+(defun paste-from-x-clipboard()
+  (interactive)
+  (cond
+   ((and (display-graphic-p) x-select-enable-clipboard)
+    (insert (x-selection 'CLIPBOARD)))
+   (t (shell-command
+       (cond
+        (*cygwin* "getclip")
+        (*is-a-mac* "pbpaste")
+        (t "xsel -ob"))
+       1))
+   ))
 
 (provide 'leader-key-mode)
 ;;; leader-key-mode.el ends here
