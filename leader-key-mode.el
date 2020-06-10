@@ -150,6 +150,7 @@
     (define-key m (leader-key-mode-kbd "g") nil)
     (define-key m (leader-key-mode-kbd "g g") 'beginning-of-buffer)
     (define-key m (leader-key-mode-kbd "g d") 'xref-find-definitions)
+    (define-key m (leader-key-mode-kbd "g b") 'xref-pop-marker-stack)
     (define-key m (leader-key-mode-kbd "g r") 'xref-find-references)
     (define-key m (leader-key-mode-kbd "g c") 'avy-goto-char)
     (define-key m (leader-key-mode-kbd "g C") 'avy-goto-char-2)
