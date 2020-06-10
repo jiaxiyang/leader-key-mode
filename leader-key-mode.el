@@ -87,6 +87,7 @@
     ;;(define-key m (leader-key-mode-kbd "j j") 'jump-to-register)
     (define-key m (leader-key-mode-kbd "j j") 'counsel-register)
     (define-key m (leader-key-mode-kbd "m m") 'counsel-bookmark)
+    (define-key m (leader-key-mode-kbd "m c") 'mc/edit-lines)
     (define-key m (leader-key-mode-kbd "a a") 'copy-to-x-clipboard)
     (define-key m (leader-key-mode-kbd "p p") 'paste-from-x-clipboard)
     (define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
