@@ -83,6 +83,8 @@
     ;;(define-key m (leader-key-mode-kbd "s s") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "s s") 'counsel-find-file)
     (define-key m (leader-key-mode-kbd "u u") 'undo-tree-undo)
+    (define-key m (leader-key-mode-kbd "u c") 'upcase-char)
+    (define-key m (leader-key-mode-kbd "u w") 'upcase-word)
     (define-key m (leader-key-mode-kbd "r r") 'undo-tree-redo)
     (define-key m (leader-key-mode-kbd "r p") 'query-replace)
     (define-key m (leader-key-mode-kbd "j s") 'point-to-register)
