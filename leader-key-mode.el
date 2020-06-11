@@ -157,7 +157,7 @@
     (define-key m (leader-key-mode-kbd "g r") 'xref-find-references)
     (define-key m (leader-key-mode-kbd "g c") 'avy-goto-char)
     (define-key m (leader-key-mode-kbd "g C") 'avy-goto-char-2)
-    (define-key m (leader-key-mode-kbd "g l") 'avy-goto-line)
+    (define-key m (leader-key-mode-kbd "g l") 'goto-line)
     (define-key m (leader-key-mode-kbd "g w") 'avy-goto-word-1)
     (define-key m (leader-key-mode-kbd "g v") 'avy-copy-region)
     (define-key m (leader-key-mode-kbd "g x") 'avy-kill-region)
