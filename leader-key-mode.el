@@ -87,6 +87,7 @@
     (define-key m (leader-key-mode-kbd "u w") 'upcase-word)
     (define-key m (leader-key-mode-kbd "r r") 'undo-tree-redo)
     (define-key m (leader-key-mode-kbd "r p") 'query-replace)
+    (define-key m (leader-key-mode-kbd "r g") 'rg)
     (define-key m (leader-key-mode-kbd "j s") 'point-to-register)
     ;;(define-key m (leader-key-mode-kbd "j j") 'jump-to-register)
     (define-key m (leader-key-mode-kbd "j j") 'counsel-register)
