@@ -108,6 +108,7 @@
     (define-key m (leader-key-mode-kbd "w w") 'other-window)
     (define-key m (leader-key-mode-kbd "w d") 'delete-window)
     (define-key m (leader-key-mode-kbd "w t") 'toggle-windows-split)
+    (define-key m (leader-key-mode-kbd "w s") 'split-window-right)
     (define-key m (leader-key-mode-kbd "w c") 'transpose-windows)
     (define-key m (leader-key-mode-kbd "k k") 'kill-this-buffer)
     (define-key m (leader-key-mode-kbd "c c") 'compile)
