@@ -102,6 +102,7 @@
     (define-key m (leader-key-mode-kbd "e f") 'end-of-defun)
     ;;(define-key m (leader-key-mode-kbd "b") (leader-key-mode--replay "C-x b"))
     (define-key m (leader-key-mode-kbd "b b") 'ivy-switch-buffer)
+    (define-key m (leader-key-mode-kbd "b l") 'ibuffer)
     (define-key m (leader-key-mode-kbd "d") nil)
     (define-key m (leader-key-mode-kbd "d d") 'kill-whole-line)
     (define-key m (leader-key-mode-kbd "d l") 'leader-key-mode--duplicate-line)
