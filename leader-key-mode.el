@@ -86,7 +86,10 @@
     (define-key m (leader-key-mode-kbd "u u") 'undo-tree-undo)
     (define-key m (leader-key-mode-kbd "u c") 'upcase-char)
     (define-key m (leader-key-mode-kbd "u w") 'upcase-word)
-    (define-key m (leader-key-mode-kbd "r r") 'undo-tree-redo)
+    (define-key m (leader-key-mode-kbd "r d") 'undo-tree-redo)
+    (define-key m (leader-key-mode-kbd "r c") 'rust-compile)
+    (define-key m (leader-key-mode-kbd "r r") 'rust-run)
+    (define-key m (leader-key-mode-kbd "r e") 'rust-goto-format-problem)
     (define-key m (leader-key-mode-kbd "r p") 'query-replace)
     (define-key m (leader-key-mode-kbd "r g") 'rg)
     (define-key m (leader-key-mode-kbd "j s") 'point-to-register)
@@ -298,7 +301,7 @@ This is common convention for many editors.  B is the beginnin of
           (jump-to-register ?u))))
   (my-iswitchb-close))
 
-;; Note: you may also need to define the my-iswitchb-close function 
+;; Note: you may also need to define the my-iswitchb-close function
 ;; created by Ignacio as well: http://emacswiki.org/emacs/IgnacioPazPosse
 (defun my-iswitchb-close()
  "Open iswitchb or, if in minibuffer go to next match. Handy way to cycle through the ring."
