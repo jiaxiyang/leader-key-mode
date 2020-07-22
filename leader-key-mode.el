@@ -90,7 +90,7 @@
     (define-key m (leader-key-mode-kbd "r c") 'cargo-process-build)
     (define-key m (leader-key-mode-kbd "c r") 'cargo-process-run)
     (define-key m (leader-key-mode-kbd "r r") 'cargo-process-repeat)
-    (define-key m (leader-key-mode-kbd "r t") 'cargo-process-test)
+    (define-key m (leader-key-mode-kbd "c t") 'cargo-process-test)
     (define-key m (leader-key-mode-kbd "r e") 'rust-goto-format-problem)
     (define-key m (leader-key-mode-kbd "r p") 'query-replace)
     (define-key m (leader-key-mode-kbd "r g") 'rg)
