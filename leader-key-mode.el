@@ -125,6 +125,7 @@
     (define-key m (leader-key-mode-kbd "n e") 'next-error)
     (define-key m (leader-key-mode-kbd "e n") 'next-error)
     (define-key m (leader-key-mode-kbd "e p") 'previous-error)
+    (define-key m (leader-key-mode-kbd "o m") 'outline-minor-mode)
     (define-key m (leader-key-mode-kbd "o a") 'outline-show-all)
     (define-key m (leader-key-mode-kbd "o o") 'outline-hide-other)
     ;;(define-key m (leader-key-mode-kbd "n") 'next-line)
