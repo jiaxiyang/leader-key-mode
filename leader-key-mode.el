@@ -127,6 +127,8 @@
     (define-key m (leader-key-mode-kbd "e p") 'previous-error)
     (define-key m (leader-key-mode-kbd "o m") 'outline-minor-mode)
     (define-key m (leader-key-mode-kbd "o a") 'outline-show-all)
+    (define-key m (leader-key-mode-kbd "o c") 'outline-show-children)
+    (define-key m (leader-key-mode-kbd "o s") 'outline-show-subtree)
     (define-key m (leader-key-mode-kbd "o o") 'outline-hide-other)
     ;;(define-key m (leader-key-mode-kbd "n") 'next-line)
     ;;(define-key m (leader-key-mode-kbd "u") 'undo)
