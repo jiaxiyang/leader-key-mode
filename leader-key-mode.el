@@ -81,6 +81,8 @@
     ;;(define-key m (leader-key-mode-kbd "s") 'leader-key-mode-select-symbol-at-point)
     (define-key m (leader-key-mode-kbd "y") 'yank)
     (define-key m (leader-key-mode-kbd "t t") 'google-translate-at-point)
+    (define-key m (leader-key-mode-kbd "t e") 'insert-translated-name-replace)
+    (define-key m (leader-key-mode-kbd "t i") 'insert-translated-name-insert)
     ;;(define-key m (leader-key-mode-kbd "s s") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "s s") 'counsel-find-file)
     (define-key m (leader-key-mode-kbd "u u") 'undo-tree-undo)
