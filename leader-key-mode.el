@@ -125,6 +125,7 @@
     (define-key m (leader-key-mode-kbd "p a") 'sp-beginning-of-sexp)
     (define-key m (leader-key-mode-kbd "p e") 'sp-end-of-sexp)
     (define-key m (leader-key-mode-kbd "p f") 'projectile-find-file)
+    (define-key m (leader-key-mode-kbd "p g") 'projectile-grep)
     (define-key m (leader-key-mode-kbd "n e") 'next-error)
     (define-key m (leader-key-mode-kbd "e n") 'next-error)
     (define-key m (leader-key-mode-kbd "e p") 'previous-error)
