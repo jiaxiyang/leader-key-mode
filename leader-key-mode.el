@@ -124,6 +124,8 @@
     (define-key m (leader-key-mode-kbd "c e") 'comment-dwim)
     (define-key m (leader-key-mode-kbd "p a") 'sp-beginning-of-sexp)
     (define-key m (leader-key-mode-kbd "p e") 'sp-end-of-sexp)
+    (define-key m (leader-key-mode-kbd "p w") 'sp-wrap-round)
+    (define-key m (leader-key-mode-kbd "p u") 'sp-unwrap-sexp)
     (define-key m (leader-key-mode-kbd "p f") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "p g") 'projectile-grep)
     (define-key m (leader-key-mode-kbd "n e") 'next-error)
