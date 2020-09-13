@@ -54,8 +54,10 @@
   (let ((m (make-sparse-keymap)))
     (define-key m (leader-key-mode-kbd "c") 'kill-ring-save)
     (define-key m (leader-key-mode-kbd "d")  'leader-key-mode--delete-region)
-    ;(define-key m (leader-key-mode-kbd "n") 'next-line)
-    ;(define-key m (leader-key-mode-kbd "p") 'previous-line)
+    (define-key m (leader-key-mode-kbd "j") 'next-line)
+    (define-key m (leader-key-mode-kbd "k") 'previous-line)
+    (define-key m (leader-key-mode-kbd "l") 'forward-char)
+    (define-key m (leader-key-mode-kbd "h") 'backward-char)
     (define-key m (leader-key-mode-kbd "o") 'exchange-point-and-mark)
     (define-key m (leader-key-mode-kbd "x")  'kill-region)
     (define-key m (leader-key-mode-kbd "y")  'leader-key-mode--delete-and-yank)
@@ -78,12 +80,20 @@
 
 (defvar leader-key-mode-keymap
   (let ((m (make-sparse-keymap)))
-    ;;(define-key m (leader-key-mode-kbd "s") 'leader-key-mode-select-symbol-at-point)
-    (define-key m (leader-key-mode-kbd "y") 'yank)
+    (define-key m (leader-key-mode-kbd "f") 'ace-jump-char-mode)
+    (define-key m (leader-key-mode-kbd "g g") 'goto-last-change)
+    (define-key m (leader-key-mode-kbd "g l") 'goto-last-change-reverse)
+    (define-key m (leader-key-mode-kbd "g d") 'xref-find-definitions)
+    (define-key m (leader-key-mode-kbd "g b") 'xref-pop-marker-stack)
+    (define-key m (leader-key-mode-kbd "g r") 'xref-find-references)
+    (define-key m (leader-key-mode-kbd "g v") 'avy-copy-region)
+    (define-key m (leader-key-mode-kbd "g x") 'avy-kill-region)
+    (define-key m (leader-key-mode-kbd "x s") 'save-buffer)
+    (define-key m (leader-key-mode-kbd "x c") 'save-buffers-kill-terminal)
+    ;; (define-key m (leader-key-mode-kbd "x x") 'counsel-M-x)
     (define-key m (leader-key-mode-kbd "t t") 'google-translate-at-point)
     (define-key m (leader-key-mode-kbd "t e") 'insert-translated-name-replace)
     (define-key m (leader-key-mode-kbd "t i") 'insert-translated-name-insert)
-    ;;(define-key m (leader-key-mode-kbd "s s") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "s s") 'counsel-find-file)
     (define-key m (leader-key-mode-kbd "u u") 'undo-tree-undo)
     (define-key m (leader-key-mode-kbd "u c") 'upcase-char)
@@ -101,17 +111,9 @@
     (define-key m (leader-key-mode-kbd "j j") 'counsel-register)
     (define-key m (leader-key-mode-kbd "m m") 'counsel-bookmark)
     (define-key m (leader-key-mode-kbd "m c") 'mc/edit-lines)
-    (define-key m (leader-key-mode-kbd "a a") 'copy-to-x-clipboard)
-    (define-key m (leader-key-mode-kbd "p p") 'paste-from-x-clipboard)
-    (define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
-    ;;(define-key m (leader-key-mode-kbd "a") 'beginning-of-line)
-    (define-key m (leader-key-mode-kbd "b f") 'beginning-of-defun)
-    (define-key m (leader-key-mode-kbd "e f") 'end-of-defun)
     ;;(define-key m (leader-key-mode-kbd "b") (leader-key-mode--replay "C-x b"))
     (define-key m (leader-key-mode-kbd "b b") 'ivy-switch-buffer)
     (define-key m (leader-key-mode-kbd "b l") 'ibuffer)
-    (define-key m (leader-key-mode-kbd "d") nil)
-    (define-key m (leader-key-mode-kbd "d d") 'kill-whole-line)
     (define-key m (leader-key-mode-kbd "d l") 'leader-key-mode--duplicate-line)
     (define-key m (leader-key-mode-kbd "w w") 'other-window)
     (define-key m (leader-key-mode-kbd "w d") 'delete-window)
@@ -127,6 +129,7 @@
     (define-key m (leader-key-mode-kbd "p w") 'sp-wrap-round)
     (define-key m (leader-key-mode-kbd "p u") 'sp-unwrap-sexp)
     (define-key m (leader-key-mode-kbd "p f") 'projectile-find-file)
+    (define-key m (leader-key-mode-kbd "p p") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "p g") 'projectile-grep)
     (define-key m (leader-key-mode-kbd "n e") 'next-error)
     (define-key m (leader-key-mode-kbd "e n") 'next-error)
@@ -136,9 +139,8 @@
     (define-key m (leader-key-mode-kbd "o c") 'outline-show-children)
     (define-key m (leader-key-mode-kbd "o s") 'outline-show-subtree)
     (define-key m (leader-key-mode-kbd "o o") 'outline-hide-other)
-    ;;(define-key m (leader-key-mode-kbd "n") 'next-line)
-    ;;(define-key m (leader-key-mode-kbd "u") 'undo)
     ;;(define-key m (leader-key-mode-kbd ":") pp-eval-expression)
+    (define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
     (define-key m (leader-key-mode-kbd "/") 'dabbrev-expand)
     (define-key m (leader-key-mode-kbd "?") 'hippie-expand)
     (define-key m (leader-key-mode-kbd "`") 'next-error)
@@ -155,37 +157,16 @@
                                                  (interactive)
                                                  (switch-to-buffer
                                                   (other-buffer))))
-
-    (define-key m (leader-key-mode-kbd "f") 'ace-jump-char-mode)
-    ;;(define-key m (leader-key-mode-kbd "f s") 'save-buffer)
-    ;;(define-key m (leader-key-mode-kbd "f o") 'find-file-at-point)
-    ;;(define-key m (leader-key-mode-kbd "f S") 'save-some-buffers)
+    (define-key m (leader-key-mode-kbd ".") 'find-tag)
     (define-key m (leader-key-mode-kbd "(") 'insert-parentheses)
     (define-key m (leader-key-mode-kbd "\"") #'(lambda (arg) (interactive "P") (insert-pair arg 34 34)))
     (define-key m (leader-key-mode-kbd "[") #'(lambda (arg) (interactive "P") (insert-pair arg 91 93)))
     (define-key m (leader-key-mode-kbd "}") (leader-key-mode--replay "\\"))
-    ;;(define-key m (leader-key-mode-kbd "o") (leader-key-mode--replay "C-x C-x"))
     (define-key m (leader-key-mode-kbd "[") #'(lambda (arg) (interactive "P")
                                                 (insert-pair arg 91 93)))
     (define-key m (leader-key-mode-kbd "]") (leader-key-mode--replay "\\"))
     (define-key m (leader-key-mode-kbd "{") #'(lambda (arg) (interactive "P") (insert-pair arg 123 125)))
     (define-key m (leader-key-mode-kbd "}") 'wcy-complete)
-    (define-key m (leader-key-mode-kbd "G") 'end-of-buffer)
-    (define-key m (leader-key-mode-kbd "g") nil)
-    (define-key m (leader-key-mode-kbd "g g") 'goto-last-change)
-    (define-key m (leader-key-mode-kbd "g l") 'goto-last-change-reverse)
-    (define-key m (leader-key-mode-kbd "g d") 'xref-find-definitions)
-    (define-key m (leader-key-mode-kbd "g b") 'xref-pop-marker-stack)
-    (define-key m (leader-key-mode-kbd "g r") 'xref-find-references)
-    (define-key m (leader-key-mode-kbd "g c") 'avy-goto-char)
-    (define-key m (leader-key-mode-kbd "g C") 'avy-goto-char-2)
-    (define-key m (leader-key-mode-kbd "g w") 'avy-goto-word-1)
-    (define-key m (leader-key-mode-kbd "g v") 'avy-copy-region)
-    (define-key m (leader-key-mode-kbd "g x") 'avy-kill-region)
-    (define-key m (leader-key-mode-kbd ".") 'find-tag)
-    (define-key m (leader-key-mode-kbd "x s") 'save-buffer)
-    (define-key m (leader-key-mode-kbd "x c") 'save-buffers-kill-terminal)
-    (define-key m (leader-key-mode-kbd "x x") 'counsel-M-x)
     m))
 
 (defun leader-key-mode-create-entry-keymap (key)
@@ -210,6 +191,7 @@ KEY is default to \"\\\" which is the leader key."
 B is the beginning of the region.  E is the end of the region."
   (interactive "r")
   (delete-region b e))
+
 (defun leader-key-mode--duplicate-line()
   "duplicate a line, and keep cursor's posistion in the line."
   (interactive)
@@ -222,6 +204,7 @@ B is the beginning of the region.  E is the end of the region."
     (save-excursion
       (insert txt "\n"))
     (forward-char l)))
+
 (defun leader-key-mode--delete-and-yank (b e)
   "Delete the current region, and then yank(paste).
 This is common convention for many editors.  B is the beginnin of
@@ -235,9 +218,6 @@ This is common convention for many editors.  B is the beginnin of
   (interactive)
   (message (or (buffer-file-name (current-buffer))
                (format "%s[%s]" default-directory (buffer-name)))))
-
-
-
 
 (defun leader-key-mode-select-thing-at-point(thing)
   (interactive "")
@@ -254,6 +234,7 @@ This is common convention for many editors.  B is the beginnin of
 (defun leader-key-mode-select-symbol-at-point()
   (interactive "")
   (leader-key-mode-select-thing-at-point 'sexp))
+
 (defun leader-key-mode-save-or-jump-to-point()
   (interactive "")
   (let ((r (get-register 'a)))
@@ -265,41 +246,7 @@ This is common convention for many editors.  B is the beginnin of
       (message "save point to register")
       (point-to-register 'a))))
 
-
 ;; jiaxiyang's config
-(setq *is-a-mac* (eq system-type 'darwin))
-(setq *cygwin* (eq system-type 'cygwin) )
-(setq *linux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)) )
-(defun copy-to-x-clipboard ()
-  (interactive)
-  (if (region-active-p)
-      (progn
-        (cond
-         ((and (display-graphic-p) x-select-enable-clipboard)
-          (x-set-selection 'CLIPBOARD (buffer-substring (region-beginning) (region-end))))
-         (t (shell-command-on-region (region-beginning) (region-end)
-                                     (cond
-                                      (*cygwin* "putclip")
-                                      (*is-a-mac* "pbcopy")
-                                      (*linux* "xsel -ib")))
-            ))
-        (message "Yanked region to clipboard!")
-        (deactivate-mark))
-        (message "No region active; can't yank to clipboard!")))
-
-(defun paste-from-x-clipboard()
-  (interactive)
-  (cond
-   ((and (display-graphic-p) x-select-enable-clipboard)
-    (insert (x-selection 'CLIPBOARD)))
-   (t (shell-command
-       (cond
-        (*cygwin* "getclip")
-        (*is-a-mac* "pbpaste")
-        (t "xsel -ob"))
-       1))
-   ))
-
 ;; Toggle between split windows and a single window
 (defun toggle-windows-split()
   "Switch back and forth between one window and whatever split of windows we might have in the frame. The idea is to maximize the current buffer, while being able to go back to the previous split of windows in the frame simply by calling this command again."
