@@ -131,6 +131,8 @@
     (define-key m (leader-key-mode-kbd "p f") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "p p") 'projectile-find-file)
     (define-key m (leader-key-mode-kbd "p g") 'projectile-grep)
+    (define-key m (leader-key-mode-kbd "n s") 'symbol-overlay-jump-next)
+    (define-key m (leader-key-mode-kbd "p s") 'symbol-overlay-jump-prev)
     (define-key m (leader-key-mode-kbd "n e") 'next-error)
     (define-key m (leader-key-mode-kbd "e n") 'next-error)
     (define-key m (leader-key-mode-kbd "e p") 'previous-error)
