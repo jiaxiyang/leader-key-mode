@@ -115,7 +115,7 @@
     (define-key m (leader-key-mode-kbd "b b") 'ivy-switch-buffer)
     (define-key m (leader-key-mode-kbd "b l") 'ibuffer)
     (define-key m (leader-key-mode-kbd "d l") 'leader-key-mode--duplicate-line)
-    (define-key m (leader-key-mode-kbd "w w") 'other-window)
+    ;; (define-key m (leader-key-mode-kbd "w w") 'other-window)
     (define-key m (leader-key-mode-kbd "w d") 'delete-window)
     (define-key m (leader-key-mode-kbd "w t") 'toggle-windows-split)
     (define-key m (leader-key-mode-kbd "w s") 'split-window-right)
