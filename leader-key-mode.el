@@ -92,7 +92,7 @@
     (define-key m (leader-key-mode-kbd "x c") 'save-buffers-kill-terminal)
     ;; (define-key m (leader-key-mode-kbd "x x") 'counsel-M-x)
     (define-key m (leader-key-mode-kbd "y y ") 'company-yasnippet)
-    (define-key m (leader-key-mode-kbd "y l") 'yas-describe-table)
+    (define-key m (leader-key-mode-kbd "y l") 'yas-describe-tables)
     (define-key m (leader-key-mode-kbd "y f") 'yas-visit-snippet-file)
     (define-key m (leader-key-mode-kbd "t t") 'google-translate-at-point)
     (define-key m (leader-key-mode-kbd "t e") 'insert-translated-name-replace)
