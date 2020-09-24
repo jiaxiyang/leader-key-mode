@@ -162,7 +162,7 @@
     (define-key m (leader-key-mode-kbd "7") 'compile)
     (define-key m (leader-key-mode-kbd "q") #'(lambda ()
                                                  (interactive)
-                                                  (insert ","))))
+                                                  (insert ",")))
     (define-key m (leader-key-mode-kbd ",") #'(lambda ()
                                                  (interactive)
                                                  (switch-to-buffer
