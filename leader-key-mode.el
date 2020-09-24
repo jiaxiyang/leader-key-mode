@@ -162,7 +162,8 @@
     (define-key m (leader-key-mode-kbd "7") 'compile)
     (define-key m (leader-key-mode-kbd "SPC") #'(lambda ()
                                                  (interactive)
-                                                  (insert ",")))
+                                                  (insert ",")
+                                                  (insert " ")))
     (define-key m (leader-key-mode-kbd ",") #'(lambda ()
                                                  (interactive)
                                                  (switch-to-buffer
