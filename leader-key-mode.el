@@ -72,7 +72,7 @@
                                                  (interactive)
                                                  (leader-key-mode-select-thing-at-point
                                                   'line)))
-    (define-key m (leader-key-mode-kbd "P")  #'(lambda()
+    (define-key m (leader-key-mode-kbd "p")  #'(lambda()
                                                  (interactive)
                                                  (leader-key-mode-select-thing-at-point
                                                   'sentence)))
@@ -101,6 +101,8 @@
     (define-key m (leader-key-mode-kbd "u u") 'undo-tree-undo)
     (define-key m (leader-key-mode-kbd "u c") 'upcase-char)
     (define-key m (leader-key-mode-kbd "u w") 'upcase-word)
+    (define-key m (leader-key-mode-kbd "l c") 'downcase-char)
+    (define-key m (leader-key-mode-kbd "l w") 'downcase-word)
     (define-key m (leader-key-mode-kbd "r d") 'undo-tree-redo)
     (define-key m (leader-key-mode-kbd "r r") 'cargo-process-repeat)
     (define-key m (leader-key-mode-kbd "c b") 'cargo-process-build)
@@ -145,7 +147,7 @@
     (define-key m (leader-key-mode-kbd "o h") 'outline-hide-other)
     (define-key m (leader-key-mode-kbd "o o") 'hydra-origami/body)
     ;;(define-key m (leader-key-mode-kbd ":") pp-eval-expression)
-    (define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
+    ;;(define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
     (define-key m (leader-key-mode-kbd "/") 'dabbrev-expand)
     (define-key m (leader-key-mode-kbd "?") 'hippie-expand)
     (define-key m (leader-key-mode-kbd "`") 'next-error)
@@ -158,6 +160,9 @@
     (define-key m (leader-key-mode-kbd "4") 'kill-this-buffer)
     (define-key m (leader-key-mode-kbd "5") 'leader-key-mode--display-buffer-name)
     (define-key m (leader-key-mode-kbd "7") 'compile)
+    (define-key m (leader-key-mode-kbd "q") #'(lambda ()
+                                                 (interactive)
+                                                  (insert ","))))
     (define-key m (leader-key-mode-kbd ",") #'(lambda ()
                                                  (interactive)
                                                  (switch-to-buffer
