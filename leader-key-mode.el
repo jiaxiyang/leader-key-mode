@@ -160,7 +160,7 @@
     (define-key m (leader-key-mode-kbd "4") 'kill-this-buffer)
     (define-key m (leader-key-mode-kbd "5") 'leader-key-mode--display-buffer-name)
     (define-key m (leader-key-mode-kbd "7") 'compile)
-    (define-key m (leader-key-mode-kbd "v") #'(lambda ()
+    (define-key m (leader-key-mode-kbd "SPC") #'(lambda ()
                                                  (interactive)
                                                   (insert ",")))
     (define-key m (leader-key-mode-kbd ",") #'(lambda ()
