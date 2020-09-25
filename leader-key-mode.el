@@ -67,7 +67,6 @@
     (define-key m (leader-key-mode-kbd "x")  'kill-region)
     (define-key m (leader-key-mode-kbd "y")  'leader-key-mode--delete-and-yank)
     (define-key m (leader-key-mode-kbd "a")  'mark-whole-buffer)
-    (define-key m (leader-key-mode-kbd "p")  'mark-paragraph)
     (define-key m (leader-key-mode-kbd "f")  'mark-defun)
     ;; (define-key m (leader-key-mode-kbd "f")  'forward-sexp)
     (define-key m (leader-key-mode-kbd "b")  'backward-sexp)
@@ -80,7 +79,7 @@
                                                  (interactive)
                                                  (leader-key-mode-select-thing-at-point
                                                   'line)))
-    (define-key m (leader-key-mode-kbd "P")  #'(lambda()
+    (define-key m (leader-key-mode-kbd "p")  #'(lambda()
                                                  (interactive)
                                                  (leader-key-mode-select-thing-at-point
                                                   'sentence)))
