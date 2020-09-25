@@ -53,6 +53,8 @@
 (defvar leader-key-mode-mark-active-keymap
   (let ((m (make-sparse-keymap)))
     (define-key m (leader-key-mode-kbd ";")  'er/expand-region)
+    (define-key m (leader-key-mode-kbd "M-;")  'er/expand-region)
+    (define-key m (leader-key-mode-kbd "M-m")  'set-mark-command)
     (define-key m (leader-key-mode-kbd "'")  'er/contract-region)
     (define-key m (leader-key-mode-kbd "M-'")  'er/contract-region)
     (define-key m (leader-key-mode-kbd "c") 'kill-ring-save)
