@@ -158,6 +158,7 @@
     (define-key m (leader-key-mode-kbd "o s") 'outline-show-subtree)
     (define-key m (leader-key-mode-kbd "o h") 'outline-hide-other)
     (define-key m (leader-key-mode-kbd "o o") 'hydra-origami/body)
+    (define-key m (leader-key-mode-kbd "i i") 'imenu-list-smart-toggle)
     ;;(define-key m (leader-key-mode-kbd ":") pp-eval-expression)
     ;;(define-key m (leader-key-mode-kbd "SPC") 'set-mark-command)
     (define-key m (leader-key-mode-kbd "/") 'dabbrev-expand)
