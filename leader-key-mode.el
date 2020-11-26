@@ -134,6 +134,7 @@
     (define-key m (leader-key-mode-kbd "l l") 'leetcode)
     (define-key m (leader-key-mode-kbd "l t") 'leetcode-try)
     (define-key m (leader-key-mode-kbd "l s") 'leetcode-submit)
+    (define-key m (leader-key-mode-kbd "l q") 'leetcode-quit)
     ;; (define-key m (leader-key-mode-kbd "w w") 'other-window)
     (define-key m (leader-key-mode-kbd "w d") 'delete-window)
     (define-key m (leader-key-mode-kbd "w t") 'toggle-windows-split)
