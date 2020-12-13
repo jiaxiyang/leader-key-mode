@@ -173,7 +173,7 @@
     (define-key m (leader-key-mode-kbd "`") 'next-error)
     (define-key m (leader-key-mode-kbd "=") 'leader-key-mode-save-or-jump-to-point)
     (define-key m (leader-key-mode-kbd "1") 'delete-other-windows)
-    (define-key m (leader-key-mode-kbd "2") 'split-window-below)
+    (define-key m (leader-key-mode-kbd "2") (split-window-func-with-other-buffer 'split-window-vertically))
     (define-key m (leader-key-mode-kbd "3") 'split-window-right)
     ;; (define-key m (leader-key-mode-kbd "3") #'(lambda()
     ;;                                             (interactive)
@@ -325,6 +325,16 @@ This is common convention for many editors.  B is the beginnin of
           (set-window-buffer (next-window) next-win-buffer)
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
+
+(defun split-window-func-with-other-buffer (split-function)
+  (lambda (&optional arg)
+    "Split this window and switch to the new window unless ARG is provided."
+    (interactive "P")
+    (funcall split-function)
+    (let ((target-window (next-window)))
+      (set-window-buffer target-window (other-buffer))
+      (unless arg
+        (select-window target-window)))))
 
 (provide 'leader-key-mode)
 ;;; leader-key-mode.el ends here
