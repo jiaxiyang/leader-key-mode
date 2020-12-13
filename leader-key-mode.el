@@ -173,7 +173,7 @@
     (define-key m (leader-key-mode-kbd "`") 'next-error)
     (define-key m (leader-key-mode-kbd "=") 'leader-key-mode-save-or-jump-to-point)
     (define-key m (leader-key-mode-kbd "1") 'delete-other-windows)
-    (define-key m (leader-key-mode-kbd "2") 'split-window-blow)
+    (define-key m (leader-key-mode-kbd "2") 'split-window-below)
     (define-key m (leader-key-mode-kbd "3") 'split-window-right)
     ;; (define-key m (leader-key-mode-kbd "3") #'(lambda()
     ;;                                             (interactive)
