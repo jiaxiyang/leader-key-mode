@@ -131,6 +131,7 @@
     (define-key m (leader-key-mode-kbd "b b") 'ivy-switch-buffer)
     (define-key m (leader-key-mode-kbd "b l") 'ibuffer)
     (define-key m (leader-key-mode-kbd "d l") 'md-duplicate-down)
+    (define-key m (leader-key-mode-kbd "d s") 'my-desktop-save)
     (define-key m (leader-key-mode-kbd "l l") 'leetcode)
     (define-key m (leader-key-mode-kbd "l t") 'leetcode-try)
     (define-key m (leader-key-mode-kbd "l s") 'leetcode-submit)
