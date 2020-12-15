@@ -114,7 +114,7 @@
     (define-key m (leader-key-mode-kbd "u w") 'upcase-word)
     (define-key m (leader-key-mode-kbd "l c") 'downcase-char)
     (define-key m (leader-key-mode-kbd "l w") 'downcase-word)
-    (define-key m (leader-key-mode-kbd "r d") 'undo-tree-redo)
+    ;; (define-key m (leader-key-mode-kbd "r d") 'undo-tree-redo)
     (define-key m (leader-key-mode-kbd "r r") 'cargo-process-repeat)
     (define-key m (leader-key-mode-kbd "c b") 'cargo-process-build)
     (define-key m (leader-key-mode-kbd "c r") 'cargo-process-run)
