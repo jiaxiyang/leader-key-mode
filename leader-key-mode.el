@@ -360,7 +360,8 @@ This is common convention for many editors.  B is the beginnin of
   (interactive)
   (delete-other-windows)
   (projectile-grep)
-  (next-multiframe-window))
+  (next-multiframe-window)
+  (compilation-next-error))
 
 (provide 'leader-key-mode)
 ;;; leader-key-mode.el ends here
