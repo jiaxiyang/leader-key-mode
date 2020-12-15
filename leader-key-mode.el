@@ -154,7 +154,9 @@
     (define-key m (leader-key-mode-kbd "p w") 'sp-wrap-round)
     (define-key m (leader-key-mode-kbd "p u") 'sp-unwrap-sexp)
     (define-key m (leader-key-mode-kbd "d d") 'projectile-find-file)
-    (define-key m (leader-key-mode-kbd "p g") 'projectile-grep)
+    (define-key m (leader-key-mode-kbd "p p") 'projectile-switch-project)
+    (define-key m (leader-key-mode-kbd "e e") 'my-projectile-grep)
+    (define-key m (leader-key-mode-kbd "p g") 'my-projectile-grep)
     (define-key m (leader-key-mode-kbd "n s") 'symbol-overlay-switch-forward)
     (define-key m (leader-key-mode-kbd "p s") 'symbol-overlay-switch-backward)
     (define-key m (leader-key-mode-kbd "n e") 'next-error)
@@ -352,6 +354,13 @@ This is common convention for many editors.  B is the beginnin of
   (interactive)
   "Split this window and switch to the new window unless ARG is provided."
   (split-window-func-with-other-buffer 'split-window-vertically))
+
+(defun my-projectile-grep()
+  "delete other windows and split right to grep"
+  (interactive)
+  (delete-other-windows)
+  (projectile-grep)
+  (next-multiframe-window))
 
 (provide 'leader-key-mode)
 ;;; leader-key-mode.el ends here
